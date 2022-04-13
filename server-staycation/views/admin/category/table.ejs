@@ -1,0 +1,37 @@
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      
+    <!-- Button trigger modal -->
+    <a href="#" data-toggle="modal" data-target="#modalcetegory" class="btn btn-primary">
+        Add
+    </a>
+  
+  
+
+
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>Action</th>
+                    </tr>   
+                </thead>
+                <tbody>
+                    <% for(let i = 0 ; i < category.length ; i++) {%>
+                        <tr>
+                            <td><%= i+1%></td>
+                            <td><%= category[i].name %></td>
+                            <td><a href="#" class="btn btn-success">Edit</a></td>
+
+                        </tr>
+                    <% }%>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
