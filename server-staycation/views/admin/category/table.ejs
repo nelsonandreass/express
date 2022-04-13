@@ -25,7 +25,7 @@
                         <tr>
                             <td><%= i+1%></td>
                             <td><%= category[i].name %></td>
-                            <td><a href="#" class="btn btn-success">Edit</a></td>
+                            <td><a href="#" id="button_edit" data-id="<%= category[i].id %>" data-name="<%= category[i].name %>" class="btn btn-success">Edit</a></td>
 
                         </tr>
                     <% }%>
