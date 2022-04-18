@@ -19,7 +19,12 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
+                    <% if(alert.message != ""){%>
+                        <div class="alert alert-<%= alert.status %>" role="alert">
+                            <%= alert.message %>
+                        </div>
+                    <% } %>
+                   
                     <!-- Page Heading -->
                     <h1 class="h3 mb-4 text-gray-800">Category</h1>
 
@@ -29,7 +34,9 @@
 
             </div>
             <!-- End of Main Content -->
-
+            <%- include('modal_create.ejs')%>
+            <%- include('modal_edit.ejs')%>
+            <%- include('../../partials/js.ejs')%>
             <!-- Footer -->
             <%- include('../../partials/footer.ejs')%>
             <!-- End of Footer -->
@@ -63,10 +70,7 @@
         </div>
     </div>
 
-    <%- include('modal_create.ejs')%>
-    <%- include('modal_edit.ejs')%>
-  
-    <%- include('../../partials/js.ejs')%>
+ 
 
 
     <script>
@@ -76,11 +80,6 @@
             $('#modalcetegoryedit').modal('show');;
             $('.id').val(id);
             $('.name').val(name);
-
         })
-      
     </script>
 
-</body>
-
-</html>

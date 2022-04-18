@@ -27,7 +27,7 @@
                             <td><%= category[i].name %></td>
                             <td>
                                 <form action="/admin/category/<%= category[i].id %>?_method=DELETE" method="POST">
-                                    <a href="javascript:void()" id="button_edit" data-id="<%= category[i].id %>" data-name="<%= category[i].name %>" class="btn btn-success">Edit</a>
+                                    <a href="#" id="button_edit" data-id="<%= category[i].id %>" data-name="<%= category[i].name %>" class="btn btn-success">Edit</a>
                                     <button type="submit" class="btn btn-danger">Remove</button>
                                 </form>
                             </td>
