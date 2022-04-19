@@ -34,9 +34,7 @@
 
             </div>
             <!-- End of Main Content -->
-            <%- include('modal_create.ejs')%>
-            <%- include('modal_edit.ejs')%>
-            <%- include('../../partials/js.ejs')%>
+
             <!-- Footer -->
             <%- include('../../partials/footer.ejs')%>
             <!-- End of Footer -->
@@ -70,8 +68,9 @@
         </div>
     </div>
 
- 
-
+    <%- include('modal_create.ejs')%>
+    <%- include('modal_edit.ejs')%>
+    <%- include('../../partials/js.ejs')%>
 
     <script>
         $('#dataTable').on('click', '#button_edit', function(){
