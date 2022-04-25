@@ -18,7 +18,7 @@ module.exports = {
             const alertMessage = req.flash('alertMessage');
             const alertStatus = req.flash('alertStatus');
             const alert = {message: alertMessage, status: alertStatus};
-
+       
             res.render('admin/category/category.ejs' , {category , alert , title: "Staycation | Category"});
         } catch (error) {
             res.render('admin/category/category.ejs' , {category});
@@ -81,11 +81,12 @@ module.exports = {
     viewBank: async (req , res) => {
         try {
          
-            const bank = await Bank.find();
+            const banks = await Bank.find();
             const alertMessage = req.flash('alertMessage');
             const alertStatus = req.flash('alertStatus');
             const alert = {message: alertMessage, status: alertStatus};
             res.render('admin/bank/bank.ejs' , {
+                banks,
                 title: "Staycation | Bank"
             });
         } catch (error) {
@@ -97,9 +98,9 @@ module.exports = {
     addBank: async (req , res) => {
         try {
             const {nameBank,nomorRekening,name} = req.body;
-            
+            //console.log(req.file);
             await Bank.create({
-                nameBank,name,nomorRekening
+                nameBank,name,nomorRekening,imageUrl : `iamge/${req.file.filename}` 
             });
             req.flash('alertMessage' , 'Success add new Banks');
             req.flash('alertStatus' , 'success');
